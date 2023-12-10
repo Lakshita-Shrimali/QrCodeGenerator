@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generated</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #3498db;
+            margin-top: 50px;
+        }
+
+        #image-container {
+            margin-top: 30px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Generated QR Code</h1>
+    <div id="image-container">
+        <img src="{{ url_for('static', filename='images/' + custom + '.png') }}" alt="Generated QR Code">
+
+    </div>
+    <p>QR code saved as {{ custom }}.png <a href="{{ url_for('static', filename='images/' + custom + '.png') }}">View</a></p>
+
+</body>
+</html>
